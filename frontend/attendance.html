@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance - School CRM</title>
+
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/attendance.css">
+</head>
+<body>
+
+    <div class="attendance-container">
+
+        <!-- HEADER -->
+
+        <div class="page-header">
+
+            <div>
+                <h1>Attendance</h1>
+                <p>Manage student attendance records</p>
+            </div>
+
+            <div class="header-buttons">
+
+                <button class="history-btn" id="historyBtn">
+                    <i class="ri-history-line"></i>
+                    Attendance History
+                </button>
+
+                <button class="back-btn" onclick="goDashboard()">
+                    <i class="ri-arrow-left-line"></i>
+                    Dashboard
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- FILTER BOX -->
+
+        <div class="filter-box">
+
+            <div class="input-group">
+
+                <label>Select Class</label>
+
+                <select id="classSelect">
+                    <option value="">Choose Class</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Select Section</label>
+
+                <select id="sectionSelect">
+                    <option value="">Choose Section</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                </select>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Select Date</label>
+
+                <input type="date" id="attendanceDate">
+
+            </div>
+
+            <button class="open-btn" id="openAttendanceBtn">
+                <i class="ri-folder-open-line"></i>
+                Open
+            </button>
+
+        </div>
+
+        <!-- ATTENDANCE TABLE -->
+
+        <div class="table-section" id="tableSection">
+
+            <div class="table-header">
+
+                <h2>Student Attendance</h2>
+
+                <button class="save-btn" id="saveAttendanceBtn">
+                    <i class="ri-save-line"></i>
+                    Save Attendance
+                </button>
+
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Student Name</th>
+                            <th>Present</th>
+                            <th>Absent</th>
+                            <th>Half-Day</th>
+                            <th>Leave</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>101</td>
+                            <td>Rahul Kumar</td>
+
+                            <td>
+                                <input type="checkbox" name="rahul" class="attendance-checkbox">
+                            </td>
+
+                            <td>
+                                <input type="checkbox" name="rahul" class="attendance-checkbox">
+                            </td>
+
+                            <td>
+                                <input type="checkbox" name="rahul" class="attendance-checkbox">
+                            </td>
+
+                            <td>
+                                <input type="checkbox" name="rahul" class="attendance-checkbox">
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>102</td>
+                            <td>Priya Sharma</td>
+
+                            <td>
+                                <input type="checkbox" name="priya" class="attendance-checkbox">
+                            </td>
+
+                            <td>
+                                <input type="checkbox" name="priya" class="attendance-checkbox">
+                            </td>
+
+                            <td>
+                                <input type="checkbox" name="priya" class="attendance-checkbox">
+                            </td>
+
+                            <td>
+                                <input type="checkbox" name="priya" class="attendance-checkbox">
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- HISTORY SIDEBAR -->
+
+    <div class="history-sidebar" id="historySidebar">
+
+        <div class="history-header">
+
+            <h2>Attendance History</h2>
+
+            <button class="close-history-btn" id="closeHistoryBtn">
+                <i class="ri-close-line"></i>
+            </button>
+
+        </div>
+
+        <div class="history-card">
+
+            <div class="history-top">
+
+                <h3>Class 10 - A</h3>
+
+                <span>2026-05-28</span>
+
+            </div>
+
+            <div class="history-stats">
+
+                <div class="stat-box present">
+                    <h4>28</h4>
+                    <p>Present</p>
+                </div>
+
+                <div class="stat-box absent">
+                    <h4>2</h4>
+                    <p>Absent</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="history-card">
+
+            <div class="history-top">
+
+                <h3>Class 9 - B</h3>
+
+                <span>2026-05-27</span>
+
+            </div>
+
+            <div class="history-stats">
+
+                <div class="stat-box present">
+                    <h4>25</h4>
+                    <p>Present</p>
+                </div>
+
+                <div class="stat-box absent">
+                    <h4>4</h4>
+                    <p>Absent</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/attendance.js"></script>
+
+</body>
+</html>
+
