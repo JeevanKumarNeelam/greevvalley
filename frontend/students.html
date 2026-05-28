@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Students - School CRM</title>
+
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/students.css">
+</head>
+<body>
+
+    <div class="students-container">
+
+        <!-- HEADER -->
+
+        <div class="page-header">
+
+            <div>
+                <h1>Students</h1>
+                <p>Manage student records</p>
+            </div>
+
+            <div class="header-buttons">
+
+                <button class="add-btn" id="openModalBtn">
+                    <i class="ri-user-add-line"></i>
+                    Add Student
+                </button>
+
+                <button class="back-btn" onclick="goDashboard()">
+                    <i class="ri-arrow-left-line"></i>
+                    Dashboard
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- FILTER SECTION -->
+
+        <div class="filter-section">
+
+            <div class="filter-box">
+
+                <div class="input-group">
+
+                    <label>Select Class</label>
+
+                    <select id="classSelect">
+                        <option value="">Choose Class</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Select Section</label>
+
+                    <select id="sectionSelect">
+                        <option value="">Choose Section</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                    </select>
+
+                </div>
+
+                <button class="open-btn" id="openStudentsBtn">
+                    <i class="ri-folder-open-line"></i>
+                    Open
+                </button>
+
+            </div>
+
+            <!-- SEARCH -->
+
+            <div class="search-box">
+
+                <i class="ri-search-line"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by Student ID, Name or Mobile Number"
+                >
+
+            </div>
+
+        </div>
+
+        <!-- TABLE SECTION -->
+
+        <div class="table-section" id="tableSection">
+
+            <div class="table-header">
+                <h2>Student List</h2>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Student ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Age</th>
+                            <th>Contact Number</th>
+                            <th>Blood Group</th>
+                            <th>Actions</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="studentTableBody">
+
+                        <tr>
+
+                            <td>101</td>
+                            <td>Rahul</td>
+                            <td>Kumar</td>
+                            <td>15</td>
+                            <td>9876543210</td>
+                            <td>B+</td>
+
+                            <td class="action-buttons">
+
+                                <button class="edit-btn">
+                                    <i class="ri-edit-line"></i>
+                                </button>
+
+                                <button class="delete-btn">
+                                    <i class="ri-delete-bin-line"></i>
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>102</td>
+                            <td>Priya</td>
+                            <td>Sharma</td>
+                            <td>14</td>
+                            <td>9876501234</td>
+                            <td>O+</td>
+
+                            <td class="action-buttons">
+
+                                <button class="edit-btn">
+                                    <i class="ri-edit-line"></i>
+                                </button>
+
+                                <button class="delete-btn">
+                                    <i class="ri-delete-bin-line"></i>
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MODAL -->
+
+    <div class="modal" id="studentModal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>Add / Edit Student</h2>
+
+                <button class="close-btn" id="closeModalBtn">
+                    <i class="ri-close-line"></i>
+                </button>
+
+            </div>
+
+            <form id="studentForm">
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label>Student ID</label>
+                        <input type="text" id="studentId" placeholder="Enter student ID">
+                    </div>
+
+                    <div class="input-group">
+                        <label>First Name</label>
+                        <input type="text" id="firstName" placeholder="Enter first name">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Last Name</label>
+                        <input type="text" id="lastName" placeholder="Enter last name">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Age</label>
+                        <input type="number" id="age" placeholder="Enter age">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Contact Number</label>
+                        <input type="text" id="contactNumber" placeholder="Enter contact number">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Blood Group</label>
+                        <input type="text" id="bloodGroup" placeholder="Enter blood group">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Class</label>
+
+                        <select id="studentClass">
+                            <option value="">Select Class</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Section</label>
+
+                        <select id="studentSection">
+                            <option value="">Select Section</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="save-btn-container">
+
+                    <button type="submit" class="save-btn">
+                        Save Student
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="js/students.js"></script>
+
+</body>
+</html>
+
