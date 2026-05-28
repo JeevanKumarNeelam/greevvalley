@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - School CRM</title>
+
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- Header -->
+        <div class="dashboard-header">
+            <h1>GREEN VALLEY</h1>
+            <p>Dashboard</p>
+        </div>
+
+        <!-- Cards -->
+        <div class="dashboard-grid">
+
+            <div class="dashboard-card" onclick="openPage('students.html')">
+
+                <div class="card-icon">
+                    <i class="ri-group-line"></i>
+                </div>
+
+                <h2>Students</h2>
+
+            </div>
+
+            <div class="dashboard-card" onclick="openPage('attendance.html')">
+
+                <div class="card-icon">
+                    <i class="ri-calendar-check-line"></i>
+                </div>
+
+                <h2>Attendance</h2>
+
+            </div>
+
+            <div class="dashboard-card" onclick="openPage('fees.html')">
+
+                <div class="card-icon">
+                    <i class="ri-money-rupee-circle-line"></i>
+                </div>
+
+                <h2>Fee</h2>
+
+            </div>
+
+            <div class="dashboard-card" onclick="openPage('settings.html')">
+
+                <div class="card-icon">
+                    <i class="ri-settings-3-line"></i>
+                </div>
+
+                <h2>Settings</h2>
+
+            </div>
+
+        </div>
+
+        <!-- Logout -->
+        <div class="logout-section">
+
+            <button class="logout-btn" id="logoutBtn">
+                <i class="ri-logout-box-r-line"></i>
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>
+
